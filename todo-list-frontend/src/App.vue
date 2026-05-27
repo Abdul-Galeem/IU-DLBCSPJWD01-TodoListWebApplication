@@ -324,13 +324,16 @@ const selectCompletion = async (task) => {
 
 /* Input field styling */
 input {
-  padding: 8px;
   width: 100%;
   box-sizing: border-box;
 }
 
-select {
-  padding: 6px;
+/* Shared form elements */
+input,
+select,
+button {
+  font-size: clamp(14px, 1.2vw, 16px);
+  padding: clamp(8px, 1vw, 10px);
 }
 
 /* Dropdown layout styling */
@@ -354,7 +357,6 @@ select {
   border-radius: 6px;
   cursor: pointer;
   border: none;
-  padding: 8px;
   color: white;
   box-shadow: 0 3px rgba(0,0,0,0.1);
   transition-duration: 0.4s;
@@ -388,7 +390,7 @@ overflow: hidden;
 .main-task {
   display: flex;
   flex-direction: column;
-  gap: 8px
+  gap: 8px;
 }
 
 /* Checkbox and task title row layout */
@@ -407,6 +409,7 @@ overflow: hidden;
 
 /* Task title styling */
 .taskTitle {
+  font-size: 16px;
   font-weight: bold;
   color: black;
   overflow-wrap: break-word;
@@ -428,7 +431,7 @@ overflow: hidden;
 
 /* Task button styling inside container */
 .task-button button {
-  padding: 6px 10px;
+  padding: clamp(6px, 1vw, 8px);
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -454,14 +457,12 @@ overflow: hidden;
   color: blue;
   padding: 4px 10px;
   border-radius: 20px;
-  font-size: 12px;
 }
   
 .priority {
   background-color: wheat;
   padding: 4px 10px;
   border-radius: 20px;
-  font-size: 12px;
 }
 
 .date {
@@ -469,7 +470,13 @@ overflow: hidden;
   color: #2e7d32;
   padding: 4px 10px;
   border-radius: 20px;
-  font-size: 12px;
+}
+
+/* Shared task tag elements */
+.category,
+.priority,
+.date {
+  font-size: clamp(12px, 1vw, 14px);
 }
 
 /* Priority colors */
@@ -560,6 +567,10 @@ overflow: hidden;
 .modal-buttons {
   display: flex;
   justify-content: space-between;
+}
+
+.modal-buttons button {
+  padding: clamp(6px, 1.5vw, 8px);
 }
 
 /* Mobile responsiveness */
